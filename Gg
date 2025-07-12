@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoMoneyLink — Сократи как Король</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #f4f4f4;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00ff99;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #aaa;
+    }
+    input[type="text"] {
+      width: 80%;
+      max-width: 400px;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background-color: #00ff99;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: #00ff99;
+    }
+  </style>
+</head>
+<body>
+  <h1>NoMoneyLink</h1>
+  <p>Сократи ссылку. Удлини жизнь. Денег всё равно нет.</p>
+  <input type="text" id="linkInput" placeholder="Вставь сюда свою длинную ссылку" />
+  <br />
+  <button onclick="shortenLink()">Сократить</button>
+  <div id="result"></div>  <script>
+    function shortenLink() {
+      const input = document.getElementById('linkInput').value;
+      if (!input) {
+        document.getElementById('result').innerText = 'Вставь хоть что-нибудь, брат';
+        return;
+      }
+      const id = Math.random().toString(36).substring(2, 7);
+      const fakeShort = `https://nomoney.link/${id}`;
+      document.getElementById('result').innerText = `Вот твоя "сокращёнка":\n${fakeShort}`;
+    }
+  </script></body>
+</html>
